@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'homepages/index'
 
-  get 'homepages/show'
+  root to: 'homepages#index'
+
+  get 'home/index' => 'homepages#index', as: 'index'
+
+  get 'home/show' => 'homepages#show'
 
   get 'albums/index'
 
