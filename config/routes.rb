@@ -8,45 +8,51 @@ Rails.application.routes.draw do
 
   get 'albums/index'
 
-  get 'albums/show'
+  get 'albums/show/:id' => 'albums#show', as: 'show_album'
 
   get 'albums/new'
 
   get 'albums/create'
 
-  get 'albums/edit'
+  get 'albums/:id/edit' => 'albums#edit', as: 'edit_album'
 
-  get 'albums/update'
+  get 'albums/:id/update' => 'albums#update', as: 'update_album'
 
   get 'albums/destroy'
 
+  post 'albums/upvote/:id'=> 'albums#upvote', as: 'upvote_album'
+
   get 'books/index'
 
-  get 'books/show'
+  get 'books/show/:id' => 'books#show', as: 'show_book'
 
   get 'books/new'
 
   get 'books/create'
 
-  get 'books/edit'
+  get 'books/:id/edit' => 'books#edit', as: 'edit_book'
 
-  get 'books/update'
+  get 'books/:id/update' => 'books#update', as: 'update_book'
 
   get 'books/destroy'
 
+  post 'books/upvote/:id'=> 'books#upvote', as: 'upvote_book'
+
   get 'movies/index'
 
-  get 'movies/show'
+  get 'movies/show/:id' => 'movies#show', as: 'show_movie'
 
   get 'movies/new'
 
   get 'movies/create'
 
-  get 'movies/edit'
+  get 'movies/:id/edit' => 'movies#edit', as: 'edit_movie'
 
-  get 'movies/update'
+  get 'movies/:id/update' => 'movies#update', as: 'update_movie'
 
   get 'movies/destroy'
+
+  post 'movies/upvote/:id'=> 'movies#upvote', as: 'upvote_movie'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

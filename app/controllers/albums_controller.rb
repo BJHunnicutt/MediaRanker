@@ -19,4 +19,13 @@ class AlbumsController < ApplicationController
 
   def destroy
   end
+
+  def upvote
+    album = Album.find(params[:id])
+    album.increment!(:rank)
+
+    album.save
+
+    redirect_to(:back)
+  end
 end

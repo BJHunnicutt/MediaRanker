@@ -13,9 +13,9 @@ CSV.foreach ('seed_csvs/movies.csv') do |csv_obj|
 end
 
 CSV.foreach ('seed_csvs/books.csv') do |csv_obj|
-  Movie.create(name: csv_obj[1], creator: csv_obj[2], description: csv_obj[3], rank: 0)
+  Book.create(name: csv_obj[1], creator: csv_obj[2], description: csv_obj[3], rank: 0)
 end
 
 CSV.foreach ('seed_csvs/albums.csv') do |csv_obj|
-  Movie.create(name: csv_obj[1], creator: csv_obj[2], description: csv_obj[3], rank: 0)
+  Album.create(name: csv_obj[1], creator: csv_obj[2], description: csv_obj[3], rank: 0)
 end
