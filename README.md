@@ -45,7 +45,7 @@ Testing will come in Wave 2!
 
 #### Wave 3
 
-Style will come in Wave 3!
+Make all pages of your application responsive using Foundation’s grid
 
 <!--
 - [Tuesday] requires one preliminary passing RSpec test that confirms that your web application can render the root route
