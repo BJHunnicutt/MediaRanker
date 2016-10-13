@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<header>
+  <h1><%= link_to("MediaRanker", index_path, method: :get) %> <td> Ranking the Best of Everything</td></h1>   <%# The td is for a cell in a table, but here it is keeping these 2 things on the same line %>
+
+</header>
+
 <%= yield %>
 
 </body>

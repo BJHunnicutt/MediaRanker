@@ -6,51 +6,51 @@ Rails.application.routes.draw do
 
   get 'home/show' => 'homepages#show'
 
-  get 'albums/index'
+  get 'albums/index' => 'albums#index', as: 'index_album'
 
   get 'albums/show/:id' => 'albums#show', as: 'show_album'
 
-  get 'albums/new'
+  get 'albums/new' => 'albums#new', as: 'new_album'
 
-  get 'albums/create'
+  post 'albums/create' => 'albums#create', as: 'create_album'
 
   get 'albums/:id/edit' => 'albums#edit', as: 'edit_album'
 
-  get 'albums/:id/update' => 'albums#update', as: 'update_album'
+  patch 'albums/:id/update' => 'albums#update', as: 'update_album'
 
-  get 'albums/destroy'
+  delete 'albums/destroy' => 'albums#destroy', as: 'destroy_album'
 
   post 'albums/upvote/:id'=> 'albums#upvote', as: 'upvote_album'
 
-  get 'books/index'
+  get 'books/index' => 'books#index', as: 'index_book'
 
   get 'books/show/:id' => 'books#show', as: 'show_book'
 
-  get 'books/new'
+  get 'books/new' => 'books#new', as: 'new_book'
 
-  get 'books/create'
+  post 'books/create' => 'books#create', as: 'create_book'
 
   get 'books/:id/edit' => 'books#edit', as: 'edit_book'
 
-  get 'books/:id/update' => 'books#update', as: 'update_book'
+  patch 'books/:id/update' => 'books#update', as: 'update_book'
 
-  get 'books/destroy'
+  delete 'books/destroy'  => 'books#destroy', as: 'destroy_book'
 
   post 'books/upvote/:id'=> 'books#upvote', as: 'upvote_book'
 
-  get 'movies/index'
+  get 'movies/index' => 'movies#index', as: 'index_movie'
 
   get 'movies/show/:id' => 'movies#show', as: 'show_movie'
 
-  get 'movies/new'
+  get 'movies/new' => 'movies#new', as: 'new_movie'
 
-  get 'movies/create'
+  post 'movies/create' => 'movies#create', as: 'create_movie'
 
   get 'movies/:id/edit' => 'movies#edit', as: 'edit_movie'
 
-  get 'movies/:id/update' => 'movies#update', as: 'update_movie'
+  patch 'movies/:id/update' => 'movies#update', as: 'update_movie'
 
-  get 'movies/destroy'
+  delete 'movies/destroy' => 'movies#destroy', as: 'destroy_movie'
 
   post 'movies/upvote/:id'=> 'movies#upvote', as: 'upvote_movie'
 

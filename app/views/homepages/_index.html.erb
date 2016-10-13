@@ -1,0 +1,21 @@
+
+<section>
+  <h2>All <%= params[:controller].to_s.capitalize%></h2>
+  <ul>
+    <% @items.each do |item| %>
+      <li>
+        <td> Upvotes: <%= item.rank %></td>
+        <td> <%=link_to(item.name, :controller => params[:controller], :action => 'show', :id => item.id)%></td>
+        <td> <%=button_to("Upvote ", action: "upvote", method: "post", id: item.id, class: 'btn') %></td>
+      </li>
+
+    <% end %>
+  </ul>
+
+
+  <%=  button_to("Add a new #{@item.class}", {:controller => params[:controller], :action => 'new'}, {:method => :get, class: 'btn'})%>
+  <%=  button_to("View all media", index_path, {method: :get, class:'btn'}) %>
+
+</section>
+
+<%= params %>

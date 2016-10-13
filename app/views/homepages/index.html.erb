@@ -1,9 +1,8 @@
-<h1>Welcome to MediaRanker</h1>
 
 <%# Since this code was really repetative, I tried to see if I could just loop through all media types %>
 <% @mediaTypes.each do |mediaInstances| %>
   <section>
-    <h2>Top <%= mediaInstances.find(1).class%>s</h2>
+    <h2>Top <%= mediaInstances.first.class%>s</h2>
     <ul>
       <% mediaInstances.each do |media| %>
         <li><%= link_to(media.name, :controller => "#{media.class.to_s.downcase}s", :action => 'show', :id => media.id)%></li>
