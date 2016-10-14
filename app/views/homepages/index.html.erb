@@ -1,15 +1,25 @@
 
 <%# Since this code was really repetative, I tried to see if I could just loop through all media types %>
-<% @mediaTypes.each do |mediaInstances| %>
-  <section>
-    <h2>Top <%= mediaInstances.first.class%>s</h2>
-    <ul>
-      <% mediaInstances.each do |media| %>
-        <li><%= link_to(media.name, :controller => "#{media.class.to_s.downcase}s", :action => 'show', :id => media.id)%></li>
-        <div class=rank> Upvotes: <%= media.rank %></div>
-      <% end %>
-    </ul>
-  </section>
-<% end %>
 
-<%= params %>
+
+
+<div class="row">
+    <% @mediaTypes.each do |mediaInstances| %>
+      <div class="large-4 medium-5 small-12 columns end">
+        <div class="primary callout">
+          <section>
+            <h2>Top <%= mediaInstances.first.class%>s</h2>
+            <% mediaInstances.each do |media| %>
+              <h4>
+                <%= link_to(media.name, :controller => "#{media.class.to_s.downcase}s", :action => 'show', :id => media.id)%>
+                <small> Upvotes: <%= media.rank %></small>
+              </h4>
+            <% end %>
+            <hr />
+          </section>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+<%# params %>

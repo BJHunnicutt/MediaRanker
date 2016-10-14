@@ -41,6 +41,16 @@ class MoviesControllerTest < ActionController::TestCase
 
   end
 
+  test "If someone tried to delete something that doesn't exist an exception will be raised " do
+    assert_raises(Exception) {delete :destroy, {id: 10}}  # added this in the destroy method in the controller --> rescue ArgumentError.new("This id cannot by found")
+  end
+
+  test "If someone tries to view something that doesn't exist an exception will be raised ...and reroute to a 404?" do
+    # assert_raises(ActiveRecord::RecordNotFound) {delete :show, {id: 10}}  #This wound pass if I didn't rescue the error and redirect to a 404 page in the ApplicationController
+    delete :show, {id: 10}
+    assert_response :missing  #This checks for a redirect to a 404
+  end
+
   test "should post an upvote" do
     @request.env['HTTP_REFERER'] = '/movies/show'
     post :upvote, {id: movies(:one).id }

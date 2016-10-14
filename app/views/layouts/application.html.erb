@@ -8,12 +8,22 @@
 </head>
 <body>
 
-<header>
-  <h1><%= link_to("MediaRanker", index_path, method: :get) %> <td> Ranking the Best of Everything</td></h1>   <%# The td is for a cell in a table, but here it is keeping these 2 things on the same line %>
+<div class="row">
+  <div class="large-12 columns">
+    <header>
+      <%= image_tag("Intellectual-Cat-1600-1200.jpg", alt:"kitten", class:"header_img") %>
+      <!-- <img src="../assets/images/Intellectual-Cat-1600-1200.jpg" alt="kitten" class="header_img"> -->
+      <div class=title>
+        <h1><%= link_to("MediaRanker", index_path, method: :get) %> <small> Ranking the Best of Everything</small></h1>   <%# The td is for a cell in a table, but here it is keeping these 2 things on the same line %>
+      </div>
+    </header>
+  </div>
+</div>
 
-</header>
 
-<%= yield %>
+  <main>
+    <%= yield %>
+  </main>
 
 </body>
 </html>

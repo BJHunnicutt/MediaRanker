@@ -29,7 +29,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    @item = Book.find(params[:id])
+    @item = Book.find(params[:id]) rescue ArgumentError.new("This id cannot by found")  #this allows for testing invalid intries in model_controller_test.rb
     @item.destroy
 
     redirect_to index_book_url

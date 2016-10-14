@@ -30,7 +30,7 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    @item = Movie.find(params[:id])
+    @item = Movie.find(params[:id]) rescue ArgumentError.new("This id cannot by found")  #this allows for testing invalid intries in model_controller_test.rb
     @item.destroy
 
     redirect_to index_movie_url

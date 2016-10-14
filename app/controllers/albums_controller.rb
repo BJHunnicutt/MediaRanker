@@ -14,9 +14,11 @@ class AlbumsController < ApplicationController
 
   def create
     @item = Album.new(name: params[:album][:name], creator: params[:album][:creator], description: params[:album][:description])
-    @item.save
-
-    redirect_to show_album_url(@item.id)
+    if @item.save
+      redirect_to show_album_url(@item.id)
+    else
+      render :index_album
+    end
   end
 
   def edit
@@ -29,7 +31,8 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
-    @item = Album.find(params[:id])
+
+    @item = Album.find(params[:id]) rescue ArgumentError.new("This id cannot by found")  #this allows for testing invalid intries in model_controller_test.rb
     @item.destroy
 
     redirect_to index_album_url
