@@ -13,7 +13,7 @@
       <%= f.text_field :name, "Name" => nil, :required => true %>
     </div>
     <div class="large-6 medium-6 small-12 columns">
-      <%= f.label :creator %>
+      <%= f.label @item.creator_type.capitalize %>
       <%= f.text_field :creator, :creator => nil  %>
     </div>
     <div class="large-12 columns">

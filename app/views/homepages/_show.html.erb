@@ -2,7 +2,7 @@
 <div class="row">
   <div class="large-12 columns">
 
-    <h2><%= @item.name %> <small> Directed By: <%=@item.creator%></small></h2>
+    <h2><%= @item.name %> <small> <%= @item.creator_job.capitalize %> By: <%=@item.creator%></small></h2>
     <h4>Upvotes: <%= @item.rank %></h4>
 
     <p>
